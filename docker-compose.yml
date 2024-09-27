@@ -1,0 +1,19 @@
+services:
+  lighttpd:
+    image: forallsecure/lighttpd:vulnerable
+    ports:
+      - "8080:80"
+    networks:
+      - webnet
+    depends_on:
+      - snort
+    restart: always
+
+  snort:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+networks:
+  webnet:
+    driver: bridge
