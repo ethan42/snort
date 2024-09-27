@@ -1,10 +1,7 @@
 services:
   lighttpd:
     image: forallsecure/lighttpd:vulnerable
-    ports:
-      - "8080:80"
-    networks:
-      - webnet
+    network_mode: "host"
     depends_on:
       - snort
     restart: always
@@ -15,10 +12,5 @@ services:
       dockerfile: Dockerfile
     cap_add:
       - NET_ADMIN  # Give snort required permissions
-    networks:
-      - webnet
+    network_mode: "host"
     restart: always
-
-networks:
-  webnet:
-    driver: bridge

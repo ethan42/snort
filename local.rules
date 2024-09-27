@@ -1,3 +1,5 @@
 # Block HTTP GET requests for /forbidden
-drop tcp any any -> any 80 (msg:"Blocked access to /forbidden"; flow:to_server,established; content:"GET /forbidden"; http_uri; sid:1000001; rev:1;)
+#drop tcp any any -> any 80 (msg:"Blocked access to /forbidden"; flow:to_server,established; content:"GET /forbidden"; http_uri; sid:1000001; rev:1;)
+drop tcp any any -> any 80 (msg:"Blocked Forbidden URI Access"; content:"/forbidden"; http_uri; sid:1000001; rev:1; classtype:web-application-attack; priority:1; react:block, msg;)
+
 
