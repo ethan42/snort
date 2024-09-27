@@ -13,6 +13,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    cap_add:
+      - NET_ADMIN  # Give snort required permissions
+    networks:
+      - webnet
+    restart: always
 
 networks:
   webnet:
