@@ -4,4 +4,4 @@ This repo provides `snortify.py`, a quick utility to build snort rules out of Ma
 
 By default, the `docker-compose` setup uses "host" networking to make it simpler for snort to capture traffic. Demo below:
 
-![Asciinema Display](https://asciinema.org/a/6LUZ6BHg1AbQHpgf98MwgaS1B)
+[![asciicast](https://asciinema.org/a/6LUZ6BHg1AbQHpgf98MwgaS1B.svg)](https://asciinema.org/a/6LUZ6BHg1AbQHpgf98MwgaS1B)
