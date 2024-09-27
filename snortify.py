@@ -29,7 +29,7 @@ def main():
                     hex_lines.append(f"content:\"|{hex_line}|\";")
                 contents = " ".join(hex_lines)
 
-                output.write(f"drop tcp any any -> any 80 (msg:\"Exploit detected - Blocking!\"; {contents} sid:{1000001 + i}; rev:1; priority:high;)\n")
+                output.write(f"drop tcp any any -> any 80 (msg:\"Exploit detected - Blocking!\"; {contents} sid:{1000001 + i}; rev:1; priority:1;)\n")
 
     print(f"Snort rules written to {args.output}")
 
